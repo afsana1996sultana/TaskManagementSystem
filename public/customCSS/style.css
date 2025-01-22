@@ -1,0 +1,294 @@
+.navbar-white {
+    background-color: #010417;
+    color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+}
+
+.nav-sidebar .nav-item .nav-link span {
+    padding: 10px;
+    font-size: 16px;
+}
+
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: #fff;
+}
+
+[class*=sidebar-dark-] {
+    background-color: #010417;
+}
+
+[class*=sidebar-dark] .brand-link, [class*=sidebar-dark] .brand-link .pushmenu {
+    color: #fff;
+}
+
+.content-wrapper {
+    background-color: #010417;
+    border-left: 1px solid #4b545c
+}
+
+.main-header {
+    border-bottom: 0;
+    border-left: 1px solid #4b545c;
+    box-shadow: 0px 4px 6px rgba(34, 32, 32, 0.77);
+}
+
+[class*=sidebar-dark-] .nav-sidebar>.nav-item.menu-open>.nav-link,
+[class*=sidebar-dark-] .nav-sidebar>.nav-item:hover>.nav-link,
+[class*=sidebar-dark-] .nav-sidebar>.nav-item>.nav-link:focus {
+    background: none;
+    color: #bc39fe !important;
+}
+
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+    background: linear-gradient(90deg, #2F0B63, #44215C);
+    color: #fff !important;
+}
+
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active:hover {
+    background: linear-gradient(90deg, #2F0B63, #44215C);
+    color: #fff !important;
+}
+
+.nav-sidebar>.nav-item .nav-icon {
+    width: 0.6rem;
+}
+
+.nav-sidebar .nav-link p {
+    margin: 12px;
+}
+
+.nav-link:hover {
+    color: #bc39fe !important;
+}
+
+[class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:focus, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:hover {
+    background: linear-gradient(90deg, #2F0B63, #44215C);
+    color: #fff !important;
+}
+
+a.dropdown.nav-link.active {
+    background: transparent !important;
+    color: #bc39fe !important;
+}
+
+a {
+    color: #bc39fe;
+}
+
+a:hover {
+    color: #bc39fe;
+    text-decoration: none;
+}
+
+.main-footer {
+    background-color: #010417;
+    border-left: 1px solid #4b545c;
+    border-top: 0;
+}
+
+body {
+    color: #fff;
+    background-color: #010417;
+}
+
+.bg-info {
+    background: linear-gradient(90deg, #2F0B63, #44215C);
+}
+
+.card {
+    background-color: #06091C;
+    border: 1px solid #4b545c;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.table-hover tbody tr:hover {
+    color: #fff;
+}
+
+.form-control {
+    color: #fff;
+    background-color: #dee2e64f;
+}
+
+.login-box, .register-box {
+    width: 450px;
+}
+
+.img-circle{
+    height: 33px !important; 
+    width: 33px;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    float: left;
+    padding-right: .5rem;
+    color: #6c757d;
+    content: ">";
+}
+
+.select2-container--default .select2-selection--single .select2-selection__clear {
+    display: none !important;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple, .select2-container--default.select2-container--focus .select2-selection--single {
+    height: 35px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    height: 35px !important;
+}
+
+.select2-container .select2-selection--single {
+    height: 35px !important;
+}
+
+.add_task_btn {
+    float: inline-end;
+    color: #fff;
+    background: linear-gradient(90deg, #2F0B63, #44215C);
+    border: none;
+    margin-left: 5px;
+}
+
+.add_btn{
+    float: inline-end;
+}
+
+.add_btn {
+    float: inline-end;
+    color: #fff;
+    background: linear-gradient(90deg, #2F0B63, #44215C);
+    border: none;
+}
+
+a.task_edit_cls {
+    color: #fff;
+    padding: 5px;
+    width: 26px;
+    height: 28px;
+    line-height: 12px;
+    background-color: #351161;
+}
+
+a.task_view_cls {
+    color: #fff;
+    padding: 5px;
+    width: 26px;
+    height: 28px;
+    line-height: 12px;
+    background-color: #351161;
+}
+
+a.task_delete_cls {
+    color: #fff;
+    padding: 5px;
+    width: 26px;
+    height: 28px;
+    line-height: 12px;
+    background-color: #DD1D21;
+}
+
+.select2-container--default .select2-selection--single {
+    background-color: #494c5a !important;
+    border: 1px solid #aaa;
+}
+
+.select2-container .select2-selection--single {
+    height: 38px !important;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple, .select2-container--default.select2-container--focus .select2-selection--single {
+    border-color: #aaa !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: #fff !important;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+    background: linear-gradient(90deg, #2F0B63, #44215C);
+    color: #fff !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #fff !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__clear {
+    display: none !important;
+}
+
+.select2-container--default .select2-results__option--selected {
+    background: linear-gradient(90deg, #2F0B63, #44215C);
+    color: #fff !important;
+}
+
+.select2-container--default .select2-results__option {
+    color: #000 !important;
+}
+
+.card-header{
+    padding: 10px;
+}
+
+.content-header h1 {
+    font-size: 24px !important;
+}
+
+h1.m-0 {
+    font-size: 24px;
+}
+
+.login-page, .register-page {
+    background-color: #000;
+}
+
+.login-logo a, .register-logo a {
+    color: #bc39fe;
+}
+
+.login_card{
+    padding: 0;
+}
+
+.login-card-body, .register-card-body {
+    width: 450px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 30px;
+    margin: auto;
+}
+
+/* pagination css */
+.page-item.active .page-link {
+    background-color: #bc39fe;
+    border-color: #bc39fe;
+}
+
+.page-link:hover {
+    color: #fff;
+    background-color: #bc39fe;
+    border-color: #bc39fe;
+}
+
+.page-link {
+    color: #fff;
+    background-color: #2a3042;
+    border: 1px solid #2a3042;
+}
+
+.page-item.disabled .page-link {
+    color: #fff;
+    background-color: #2a3042;
+    border-color: #2a3042;
+}
+
+.fa, .fas {
+    color: #fff;
+}
