@@ -13,5 +13,12 @@ class Task extends Model
         'description',
         'priority',
         'status',
+        'created_by',
     ];
+
+    public function CreatedBy()
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
+
 }

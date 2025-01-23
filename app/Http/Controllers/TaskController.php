@@ -4,25 +4,32 @@ namespace App\Http\Controllers;
 
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
     public function index(Request $request)
     {
-        $priority = $request->input('priority');
-        $status = $request->input('status');
-        $query = Task::query();
-
-        if ($priority) {
-            $query->where('priority', $priority);
-        }
-
-        if ($status !== null) {
-            $query->where('status', $status);
-        }
-        $tasks = $query->paginate(10)->appends(request()->query());
-        return view('tasks.index', compact('tasks', 'priority', 'status'));
-    }
+        // Validate the query parameters
+        $validated = $request->validate([
+            'priority' => 'nullable|in:Low,Medium,High',
+            'status' => 'nullable|boolean',
+        ]);
+    
+        // Fetch authenticated user's tasks
+        $tasks = Task::where('created_by', Auth::user()->id)
+            ->when($validated['priority'] ?? null, function ($query, $priority) {
+                $query->where('priority', $priority);
+            })
+            ->when(isset($validated['status']), function ($query) use ($validated) {
+                $query->where('status', $validated['status']);
+            })
+            ->paginate(10)
+        ->appends($request->query());
+    
+        return view('tasks.index', ['tasks' => $tasks,'priority' => $validated['priority'] ?? null,'status' => $validated['status'] ?? null,
+        ]);
+    }    
 
     public function create()
     {
@@ -31,16 +38,17 @@ class TaskController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+        $validatedData = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'priority' => 'in:Low,Medium,High',
+            'priority' => 'required|in:Low,Medium,High',
+            'status' => 'required|boolean',
         ]);
-
-        Task::create($request->all());
+        $validatedData['created_by'] = Auth::id();
+        Task::create($validatedData);
         toastr()->success('Task created successfully.');
         return redirect()->route('tasks.index');
-    }
+    }    
 
     public function view($id)
     {
@@ -60,13 +68,13 @@ class TaskController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
             'priority' => 'in:Low,Medium,High',
+            'status' => 'required|boolean',
         ]);
         $tasks = Task::find($id);
         $tasks->update($request->all());
         toastr()->success('Task updated successfully.');
         return redirect()->route('tasks.index');
     }
-
 
     public function destroy($id)
     {

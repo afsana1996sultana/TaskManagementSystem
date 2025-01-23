@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->enum('priority', ['Low', 'Medium', 'High'])->default('Medium'); // Priority enum
             $table->boolean('status')->default(false)->comment('0=>pending, 1=>completed');
+            $table->string('created_by')->nullable();
             $table->timestamps();
         });
     }

@@ -61,27 +61,33 @@
                         </thead>
 
                         <tbody>
-                            @foreach ($tasks as $key => $val)
-                            <tr>
-                                <td>{{ $val->title }}</td>
-                                <td>{{ \Illuminate\Support\Str::limit($val->description, 70, '...') ?? "No Description"}}</td>
-                                <td>{{ $val->priority }}</td>
-                                <td>
-                                    @if($val->status == 0)
-                                        Pending
-                                    @else
-                                        Completed 
-                                    @endif
-                                </td>
-                                <td class="text-right py-0 align-middle">
-                                    <div class="btn-group btn-group-sm">
-                                        <a type="button" class="task_view_cls" href="{{ route('tasks.view',$val->id) }}"><i class="far fa-eye"></i></a>&nbsp;
-                                        <a type="button" class="task_edit_cls" href="{{ route('tasks.edit',$val->id) }}"><i class="far fa-edit"></i></a>&nbsp;
-                                        <a type="button" class="task_delete_cls" href="{{ route('tasks.destroy',$val->id) }}" id="delete"><i class="fas fa-trash"></i></a>
-                                    </div>
-                                </td> 
-                            </tr>
-                            @endforeach
+                            @if ($tasks->isEmpty())
+                                <tr>
+                                    <td colspan="5" class="text-center">No records found</td>
+                                </tr>
+                            @else
+                                @foreach ($tasks as $key => $val)
+                                    <tr>
+                                        <td>{{ $val->title }}</td>
+                                        <td>{{ \Illuminate\Support\Str::limit($val->description, 70, '...') ?? 'No Description' }}</td>
+                                        <td>{{ $val->priority }}</td>
+                                        <td>
+                                            @if($val->status == 0)
+                                                Pending
+                                            @else
+                                                Completed 
+                                            @endif
+                                        </td>
+                                        <td class="text-right py-0 align-middle">
+                                            <div class="btn-group btn-group-sm">
+                                                <a type="button" class="task_view_cls" href="{{ route('tasks.view', $val->id) }}"><i class="far fa-eye"></i></a>&nbsp;
+                                                <a type="button" class="task_edit_cls" href="{{ route('tasks.edit', $val->id) }}"><i class="far fa-edit"></i></a>&nbsp;
+                                                <a type="button" class="task_delete_cls" href="{{ route('tasks.destroy', $val->id) }}" id="delete"><i class="fas fa-trash"></i></a>
+                                            </div>
+                                        </td> 
+                                    </tr>
+                                @endforeach
+                            @endif
                         </tbody>
                     </table>
                     <div>
