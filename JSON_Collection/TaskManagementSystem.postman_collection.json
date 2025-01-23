@@ -14,13 +14,19 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "4|hLMFh5nHP57jLqelhVA2nJQUD0kh8kfDvdH7j54Fe1b54972",
+							"value": "6|iiJRmlBhjhSxdmoIiZEBmx2RE7BF3pcpSOuiSJMQ02043890",
 							"type": "string"
 						}
 					]
 				},
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "{{url}}/api/tasks",
 					"host": [
@@ -38,7 +44,13 @@
 			"name": "Login",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "formdata",
 					"formdata": [
@@ -75,19 +87,25 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "4|hLMFh5nHP57jLqelhVA2nJQUD0kh8kfDvdH7j54Fe1b54972",
+							"value": "6|iiJRmlBhjhSxdmoIiZEBmx2RE7BF3pcpSOuiSJMQ02043890",
 							"type": "string"
 						}
 					]
 				},
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "formdata",
 					"formdata": [
 						{
 							"key": "title",
-							"value": "Api Check Task",
+							"value": "Task AuthCheck Requird22",
 							"type": "text"
 						},
 						{
@@ -104,6 +122,12 @@
 							"key": "status",
 							"value": "",
 							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
 						}
 					]
 				},
@@ -128,19 +152,25 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "4|hLMFh5nHP57jLqelhVA2nJQUD0kh8kfDvdH7j54Fe1b54972",
+							"value": "6|iiJRmlBhjhSxdmoIiZEBmx2RE7BF3pcpSOuiSJMQ02043890",
 							"type": "string"
 						}
 					]
 				},
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "formdata",
 					"formdata": [
 						{
 							"key": "title",
-							"value": "Api Check Task UpdateLatest",
+							"value": "UpdateTask",
 							"type": "text"
 						},
 						{
@@ -155,7 +185,7 @@
 						},
 						{
 							"key": "status",
-							"value": "0",
+							"value": "1",
 							"type": "text"
 						},
 						{
@@ -166,14 +196,14 @@
 					]
 				},
 				"url": {
-					"raw": "{{url}}/api/tasks/6",
+					"raw": "{{url}}/api/tasks/16",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"api",
 						"tasks",
-						"6"
+						"16"
 					]
 				}
 			},
@@ -187,24 +217,38 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "4|hLMFh5nHP57jLqelhVA2nJQUD0kh8kfDvdH7j54Fe1b54972",
+							"value": "6|iiJRmlBhjhSxdmoIiZEBmx2RE7BF3pcpSOuiSJMQ02043890",
 							"type": "string"
 						}
 					]
 				},
 				"method": "DELETE",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "{{url}}/api/tasks/6",
+					"raw": "{{url}}/api/tasks/22",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"api",
 						"tasks",
-						"6"
+						"22"
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
 			},
 			"response": []
 		}
@@ -242,7 +286,7 @@
 		},
 		{
 			"key": "token",
-			"value": "4|hLMFh5nHP57jLqelhVA2nJQUD0kh8kfDvdH7j54Fe1b54972",
+			"value": "6|iiJRmlBhjhSxdmoIiZEBmx2RE7BF3pcpSOuiSJMQ02043890",
 			"type": "string"
 		}
 	]
