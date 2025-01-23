@@ -69,7 +69,7 @@
                                 @foreach ($tasks as $key => $val)
                                     <tr>
                                         <td>{{ $val->title }}</td>
-                                        <td>{{ \Illuminate\Support\Str::limit($val->description, 70, '...') ?? 'No Description' }}</td>
+                                        <td>{{ \Illuminate\Support\Str::limit($val->description, 60, '...') ?? 'No Description' }}</td>
                                         <td>{{ $val->priority }}</td>
                                         <td>
                                             @if($val->status == 0)
