@@ -14,27 +14,40 @@ class LoginController extends Controller
 {
     public function login(Request $request)
     {
-        $loginUserData = $request->validate([
+        // Validate input data with detailed error messages
+        $validator = Validator::make($request->all(), [
             'email' => 'required|string|email',
-            'password' => 'required|min:8',
+            'password' => 'required|string|min:8',
         ]);
-
-        $user = User::where('email', $loginUserData['email'])->first();
-        if (!$user || !Hash::check($loginUserData['password'], $user->password)) {
+    
+        // Return validation errors if any
+        if ($validator->fails()) {
             return response()->json([
-                'message' => 'Invalid Credentials',
+                'status' => false,
+                'message' => 'Validation errors',
+                'errors' => $validator->errors()
+            ], 422);
+        }
+    
+        $user = User::where('email', $request->email)->first();
+        // Check if user exists and password is valid
+        if (!$user || !Hash::check($request->password, $user->password)) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Invalid credentials',
             ], 401);
         }
-
         $user->tokens()->delete();
         $token = $user->createToken('myApp', ['*'], now()->addHours(10));
-        $success['name'] = $user->name;
-        $success['token'] = $token->plainTextToken;
-
+    
+        // Prepare success response data
         return response()->json([
             'status' => true,
-            'message' => 'Login successfully',
-            'success' => $success
-        ]);
-    }
+            'message' => 'Login successful',
+            'data' => [
+                'name' => $user->name,
+                'token' => $token->plainTextToken,
+            ]
+        ], 200);
+    }    
 }

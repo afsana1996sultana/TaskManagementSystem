@@ -30,30 +30,30 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="input-group mb-3">
-                            <input type="email" id="email" class="form-control @error('email') is-invalid @enderror"
+                            <input type="email" id="email" class="login_from form-control @error('email') is-invalid @enderror"
                                 name="email" value="{{ old('email') }}" placeholder="Email" autocomplete="email" autofocus required>
-                            @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
                             <div class="input-group-append">
                                 <div class="input-group-text"><span class="fas fa-envelope"></span></div>
                             </div>
                         </div>
-
-                        <div class="input-group mb-3">
-                            <input type="password" id="password" class="form-control @error('password') is-invalid @enderror"
-                                name="password" placeholder="Password" autocomplete="current-password" required>
-                            @error('password')
+                        @error('email')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
-                            @enderror
+                        @enderror
+
+                        <div class="input-group mb-3">
+                            <input type="password" id="password" class="login_from form-control @error('password') is-invalid @enderror"
+                                name="password" placeholder="Password" autocomplete="current-password" required>
                             <div class="input-group-append">
                                 <div class="input-group-text"><span class="fas fa-lock"></span></div>
                             </div>
                         </div>
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
 
                         <div class="row">
                             <div class="col-8">

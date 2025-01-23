@@ -29,45 +29,44 @@
                 <form action="{{ route('register') }}" method="POST">
                     @csrf
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Full name" autofocus autocomplete="name" required>
-                        @error('name')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
-
+                        <input type="text" class="login_from form-control" name="name" value="{{ old('name') }}" placeholder="Full name" autofocus autocomplete="name" required>
                         <div class="input-group-append">
                             <div class="input-group-text"><span class="fas fa-user"></span></div>
                         </div>
                     </div>
+                    @error('name')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
 
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email" autocomplete="username"  required>
-                        @error('email')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
+                        <input type="email" class="login_from form-control" name="email" id="email" value="{{ old('email') }}" placeholder="Email" autocomplete="username"  required> 
                         <div class="input-group-append">
                             <div class="input-group-text"><span class="fas fa-envelope"></span></div>
                         </div>
                     </div>
+                    @error('email')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
 
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" name="password" value="{{ old('password') }}" placeholder="Password" autocomplete="new-password" required>
-                        @error('password')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
+                        <input type="password" class="login_from form-control" name="password" id="password" value="{{ old('password') }}" placeholder="Password" autocomplete="new-password" required>
                         <div class="input-group-append">
                             <div class="input-group-text"><span class="fas fa-lock"></span></div>
                         </div>
                     </div>
+                    @error('password')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
 
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" name="password_confirmation" value="{{ old('password') }}" placeholder="Retype Password" autocomplete="new-password" required>
-                        @error('password_confirmation')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
+                        <input type="password" class="login_from form-control" name="password_confirmation" id="password_confirmation" value="{{ old('password') }}" placeholder="Retype Password" autocomplete="new-password" required>
                         <div class="input-group-append">
                             <div class="input-group-text"><span class="fas fa-lock"></span></div>
                         </div>
                     </div>
+                    @error('password_confirmation')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                     
                     <div class="row">
                         <div class="col-8"></div>
